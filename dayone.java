@@ -1,5 +1,5 @@
 class MyTask implements Runnable {
-	private int count;
+	private long count;
 	@Override
 	public void run() {
 		for(int i = 1; i <= 1000000; i++)
@@ -16,5 +16,7 @@ public class dayone{
 			Thread t1 = new Thread(new MyTask());
 			threadlist[i] = t1;
 		}
+		for(int i = 0; i < 1000; i++)
+			threadlist[i].run();
 	}
 }
