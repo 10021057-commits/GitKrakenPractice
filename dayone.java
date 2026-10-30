@@ -11,6 +11,7 @@ class MyTask implements Runnable {
 
 public class dayone{
 	public static void main(String[]args){
+		CodeTimer.start();
 		Thread[] threadlist = new Thread[1000];
 		for(int i = 0; i < 1000; i++){
 			Thread t1 = new Thread(new MyTask());
@@ -24,5 +25,6 @@ public class dayone{
 				Thread.currentThread().interrupt();
 			 }
 		}
+		System.out.println("time: " + CodeTimer.stop());
 	}
 }
