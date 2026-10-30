@@ -1,5 +1,5 @@
 class MyTask implements Runnable {
-	private long count;
+	static long count;
 	@Override
 	public void run() {
 		for(int i = 1; i <= 1000000; i++)
