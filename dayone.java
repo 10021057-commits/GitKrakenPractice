@@ -16,7 +16,13 @@ public class dayone{
 			Thread t1 = new Thread(new MyTask());
 			threadlist[i] = t1;
 		}
-		for(int i = 0; i < 1000; i++)
+		for(int i = 0; i < 1000; i++){
 			threadlist[i].run();
+			try {
+				threadlist[i].join();
+			 } catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			 }
+		}
 	}
 }
