@@ -1,7 +1,11 @@
 class MyTask implements Runnable {
+	private int count;
 	@Override
 	public void run() {
-		System.out.println(Thread.currentThread().getName());
+		for(int i = 1; i <= 1000000; i++)
+			count += i;
+
+		System.out.println(Thread.currentThread().getName() + " " + count);
 	}
 }
 
@@ -12,6 +16,5 @@ public class dayone{
 			Thread t1 = new Thread(new MyTask());
 			threadlist[i] = t1;
 		}
-
 	}
 }
